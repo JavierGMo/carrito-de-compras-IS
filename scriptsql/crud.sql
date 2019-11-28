@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-11-2019 a las 02:31:51
+-- Tiempo de generación: 28-11-2019 a las 00:59:52
 -- Versión del servidor: 10.4.6-MariaDB
 -- Versión de PHP: 7.3.8
 
@@ -44,7 +44,24 @@ INSERT INTO `datos` (`id`, `nombre`, `apellido`, `correo`, `password`) VALUES
 (1, 'javier', 'gonzalez', 'algo@algo.com', 'adsas'),
 (2, 'walter', 'whites', 'dasda@dasd.com', 'dasdasd'),
 (3, 'pep', 'pepe', 'asd@sdad.com', 'ads'),
-(4, 'alondra', 'mejia', 'mejia@gmail.com', 'mellijaw');
+(4, 'alondra', 'mejia', 'mejia@gmail.com', 'mellijaw'),
+(5, '', 'moarmora', 'asdas@sadas.com', 'hola'),
+(6, 'javier', 'javier', 'asdas@adas.com', 'hola'),
+(7, 'gomo', 'gomo', 'lore@lorem.com', 'lorem'),
+(8, 'lorem', 'lorem', 'ipsum@lorem.com', 'com');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `productos`
+--
+
+CREATE TABLE `productos` (
+  `id` int(10) NOT NULL,
+  `nombre` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `precio` int(10) NOT NULL,
+  `descripcion` varchar(90) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Índices para tablas volcadas
@@ -57,6 +74,12 @@ ALTER TABLE `datos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `productos`
+--
+ALTER TABLE `productos`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -64,7 +87,13 @@ ALTER TABLE `datos`
 -- AUTO_INCREMENT de la tabla `datos`
 --
 ALTER TABLE `datos`
-  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(5) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+
+--
+-- AUTO_INCREMENT de la tabla `productos`
+--
+ALTER TABLE `productos`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
