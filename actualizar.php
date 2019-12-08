@@ -1,6 +1,6 @@
 <?php include("includes/header.php"); ?>
-    <div class="w-75">
-        <div>
+    <div class="d-flex justify-content-center flex-column w-75 my-4">
+        <div class="">
             <!--nombre, precio, descripcion-->
             <!--action="./usuarios/subirproducusuario.php"-->
             <form>
@@ -16,13 +16,13 @@
                     <label for="DescripcionProd">Descripcion del producto</label>
                     <input type="text" name="desc_producto_usuario" class="form-control" id="desc_producto_usuario_update" autocomplete="off">
                 </div>
-                <button type="submit" class="btn btn-primary" id="btn-update-producto">Actualizar producto</button>
+                <button type="submit" class="btn btn-primary ml-4" id="btn-update-producto">Actualizar producto</button>
             </form>
-        </div>
-    </div>
-    <div>
-        <div>
-            <a href="controlproductos.php">Vista productos</a>
+        </div><!--form update-->
+        <div class="my-4 ml-4">
+            <div>
+                <a href="controlproductos.php">Vista productos</a>
+            </div>
         </div>
     </div>
     <?php include("includes/footer.php"); ?>
