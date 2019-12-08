@@ -16,11 +16,10 @@
                 'id'=>$row['id']
             );
         }
-
+        $conexion->close();
         $jsoncodificado = json_encode($json);
         echo $jsoncodificado;
 
     }
-    
 
 ?>
