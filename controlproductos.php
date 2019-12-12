@@ -1,4 +1,5 @@
-    <?php include("includes/header.php"); ?>
+<?php session_start(); ?>
+<?php include("includes/header.php"); ?>
     <div class="d-flex flex-row my-3">
         <!--
         <div class="my-3">

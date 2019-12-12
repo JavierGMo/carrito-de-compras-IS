@@ -1,3 +1,7 @@
+<?php session_start(); ?>
+<?php
+session_status();
+?>
 <?php include("includes/header.php"); ?>
     <?php include("database/database.php") ?>
     <div class="w-75">

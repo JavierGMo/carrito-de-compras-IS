@@ -1,3 +1,4 @@
+<?php session_start(); ?>    
 <?php include("includes/header.php"); ?>
     <div class="d-flex justify-content-center flex-column w-75 my-4">
         <div class="">

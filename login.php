@@ -8,7 +8,7 @@
                 </div>
                 <div class="mb-4">
                     <label for="passworsLogin">Contraseña:</label>
-                    <input type="password" class="form-control" id="passworsLogin" name="passworsLogin"placeholder="Contraseña">
+                    <input type="password" class="form-control" id="passworsLogin" name="passworsLogin" placeholder="Contraseña">
                 </div>
                 <button class="btn btn-primary" id="btn-inicia-sesion">Iniciar sesion</button>
             </form>
