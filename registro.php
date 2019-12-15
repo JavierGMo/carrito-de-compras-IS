@@ -1,4 +1,7 @@
-<?php include('includes/header.php'); ?>
+<?php
+    include('includes/header.php');
+    include('usuarios/estaregistrado.php');
+?>
     <div class="d-flex justify-content-center mt-5 mb-5">
         <div>
             <form action="usuarios/registrousuarios.php" method="POST" >

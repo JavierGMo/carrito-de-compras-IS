@@ -1,4 +1,6 @@
-    <?php include("includes/header.php"); ?>
+<?php
+    include("includes/header.php");
+?>
     <header class="bg-light pt-3 pb-3">
         <div class="d-flex flex-row justify-content-around">
             <div id="background-logo" class="w-25">

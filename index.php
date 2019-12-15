@@ -1,4 +1,3 @@
-<?php session_start(); ?>    
 <?php include('includes/header.php')?>
     <div class="d-flex flex-column justify-content-center"><!--pendiente en el css con background image-->
         <div class="bd-example">
@@ -88,8 +87,15 @@
         </div><!--contenido textos imagenes-->
     </div>
     
+    <?php
+        if(isset($_SESSION["usuario"])){
+            echo "<h1>Hola status</h1>";
+        }else{
+            echo "<h1>Hola status no</h1>";
+        }
+    ?>
     <?php include("./includes/footer.php"); ?>
     <script src="js/barsearch.js"></script>
-    <!--<script src="js/acciones-generales.js"></script>-->
+    <script src="js/acciones-generales.js"></script>
 </body>
 </html>

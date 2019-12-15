@@ -1,7 +1,10 @@
-    <?php include('includes/header.php'); ?>
+<?php 
+    include('includes/header.php');
+    include('usuarios/estaregistrado.php');
+?>
     <main>
         <div class="d-flex justify-content-center m-5">
-            <form action="usuarios/sesion.php" method="POST">
+            <form action="sesiones/sessionstar.php" method="POST">
                 <div class="mb-4">
                     <label for="emailLogin">Correo:</label>
                     <input type="email" class="form-control" id="emailLogin" name="emailLogin" placeholder="ejemplo@ejemplo.com" autocomplete="off">

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,7 +11,7 @@
     <title>Document</title>
 </head>
 <body>
-<header class="fixed-top bg-light pt-3 pb-3">
+<header class="bg-light pt-3 pb-3">
     <div class="d-flex flex-row justify-content-around">
         <div id="background-logo" class="w-25">
         </div><!--Imagen de la pagina-->
@@ -30,10 +31,13 @@
             </div><!--nav enlaces-->
         </div><!--Enlaces y barra de busqueda-->
         <div class="position-relative">
-            <div>
-                <a href="login.php" id="icon-login-click">Login</a>
-            </div><!--icono login pre-form-->
-            <div><a href="registro.php">Crear cuenta</a></div>
+            <?php if(!isset($_SESSION["usuario"])): ?>
+                <div><a href="login.php" id="icon-login-click">Login</a></div><!--icono login pre-form-->
+                <div><a href="registro.php">Crear cuenta</a></div>
+            <?php endif ?>
+            <?php if(isset($_SESSION["usuario"])): ?>
+                <div><a href="sesiones/sessionlogout.php">Cerrar sesion</a></div>
+            <?php endif ?>
         </div><!--Login-->
     </div><!--contenedor navegacion-->
 </header><!--header-->

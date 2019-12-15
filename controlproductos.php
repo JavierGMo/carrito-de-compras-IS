@@ -1,5 +1,7 @@
-<?php session_start(); ?>
-<?php include("includes/header.php"); ?>
+<?php
+    include("includes/header.php"); 
+    include('usuarios/estaregistrado.php');
+?>
     <div class="d-flex flex-row my-3">
         <!--
         <div class="my-3">

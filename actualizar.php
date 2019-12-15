@@ -1,5 +1,7 @@
-<?php session_start(); ?>    
-<?php include("includes/header.php"); ?>
+<?php
+    include("includes/header.php"); 
+    include('usuarios/estaregistrado.php');
+?>
     <div class="d-flex justify-content-center flex-column w-75 my-4">
         <div class="">
             <!--nombre, precio, descripcion-->

@@ -1,9 +1,9 @@
-<?php session_start(); ?>
-<?php
-session_status();
+<?php 
+    include("includes/header.php");
+    include("database/database.php");
+    include('usuarios/estaregistrado.php');
 ?>
-<?php include("includes/header.php"); ?>
-    <?php include("database/database.php") ?>
+
     <div class="w-75">
         <div>
             <!--nombre, precio, descripcion-->
