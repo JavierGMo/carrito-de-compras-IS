@@ -32,11 +32,13 @@
         </div><!--Enlaces y barra de busqueda-->
         <div class="position-relative">
             <?php if(!isset($_SESSION["usuario"])): ?>
-                <div><a href="login.php" id="icon-login-click">Login</a></div><!--icono login pre-form-->
-                <div><a href="registro.php">Crear cuenta</a></div>
+                <div><a href="/login.php" id="icon-login-click">Login</a></div><!--icono login pre-form-->
+                <div><a href="/registro.php">Crear cuenta</a></div>
             <?php endif ?>
             <?php if(isset($_SESSION["usuario"])): ?>
-                <div><a href="sesiones/sessionlogout.php">Cerrar sesion</a></div>
+                <div><a href="#">Cuenta</a></div>
+                <div><a href="/proyectoISoft/controlproductos.php">Subir producto</a></div>
+                <div><a href="/proyectoISoft/sesiones/sessionlogout.php">Cerrar sesion</a></div>
             <?php endif ?>
         </div><!--Login-->
     </div><!--contenedor navegacion-->

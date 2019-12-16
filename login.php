@@ -1,6 +1,6 @@
 <?php 
     include('includes/header.php');
-    include('usuarios/estaregistrado.php');
+    include('sesiones/noestaregistrado.php');
 ?>
     <main>
         <div class="d-flex justify-content-center m-5">

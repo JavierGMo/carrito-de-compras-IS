@@ -1,6 +1,6 @@
 <?php
     include("includes/header.php"); 
-    include('usuarios/estaregistrado.php');
+    include('sesiones/estaregistrado.php');
 ?>
     <div class="d-flex flex-row my-3">
         <!--
