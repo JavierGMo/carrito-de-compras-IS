@@ -6,8 +6,8 @@
         <div class="d-flex justify-content-center m-5">
             <form action="sesiones/sessionstar.php" method="POST">
                 <div class="mb-4">
-                    <label for="emailLogin">Correo:</label>
-                    <input type="email" class="form-control" id="emailLogin" name="emailLogin" placeholder="ejemplo@ejemplo.com" autocomplete="off">
+                    <label for="usuarionamelogin">Correo:</label>
+                    <input type="text" class="form-control" id="usuarionamelogin" name="usuarionamelogin" placeholder="correo o usuario" autocomplete="off">
                 </div>
                 <div class="mb-4">
                     <label for="passworsLogin">Contraseña:</label>

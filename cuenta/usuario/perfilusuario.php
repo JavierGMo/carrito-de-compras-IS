@@ -8,7 +8,7 @@
             <p><?php echo $_SESSION["usuario"]["nombre"]." ".$_SESSION["usuario"]["apellido"]; ?></p>
             <p><?php 
                 echo date("F");
-                echo date("j");
+                echo date("d");
                 ?>
             </p>
         </div>
