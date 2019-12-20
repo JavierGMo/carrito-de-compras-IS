@@ -22,7 +22,7 @@
                     <div class="w-75">
                         <input type="text" id="caja-buscar" class="form-control-plaintext bg-white" placeholder="Busqueda...">
                     </div>
-                    <button type="submit" id="btn-buscador" class="btn btn-primary"><i>Q</i></button>
+                    <button type="submit" id="btn-buscador" class="btn btn-primary"><i class="fa fa-search"></i></button>
                 </form>
             </div><!---Barra de busqueda-->
             <div class="d-flex flex-row justify-content-between">
@@ -33,13 +33,13 @@
         </div><!--Enlaces y barra de busqueda-->
         <div class="position-relative">
             <?php if(!isset($_SESSION["usuario"])): ?>
-                <div><a href="/proyectoISoft/login.php" id="icon-login-click">Login</a></div><!--icono login pre-form-->
-                <div><a href="/proyectoISoft/registro.php">Crear cuenta</a></div>
+                <div><a href="/proyectoISoft/login.php" id="icon-login-click">Login <i class="fa fa-user"></i></a></div><!--icono login pre-form-->
+                <div><a href="/proyectoISoft/registro.php">Crear cuenta <i class="fa fa-user-plus"></i></a></div>
             <?php endif ?>
             <?php if(isset($_SESSION["usuario"])): ?>
-                <div><a href="#">Cuenta</a></div>
+                <div><a href="/proyectoISoft/cuenta/usuario/perfilusuario.php">Cuenta <i class="fa fa-user-circle"></i></a></div>
                 <div><a href="/proyectoISoft/controlproductos.php">Subir producto</a></div>
-                <div><a href="/proyectoISoft/sesiones/sessionlogout.php">Cerrar sesion</a></div>
+                <div><a href="/proyectoISoft/sesiones/sessionlogout.php">Cerrar sesion<i class="fa fa-sign-out"></i></a></div>
             <?php endif ?>
         </div><!--Login-->
     </div><!--contenedor navegacion-->
