@@ -1,9 +1,16 @@
 <?php
+    session_start();
     include_once('../../../database/database.php');
+    /**hacer pruebas para ver que hace la conexion en las clases
+     * sin ser un parametro en los metodos y
+     * si se pasa como parametro hacerla null y volver a usarla
+     * fuera de la clase
+     */
     class ActualizarDatos{
         private $nombre;
         private $apellido;
         private $password;
+        private $passwordConfirm;
         private $correo;
         public function setNombre($nombre){
             $this->nombre = $nombre;
@@ -23,11 +30,20 @@
         public function getPassword(){
             return $this->password;
         }
+        public function setPasswordConfirm($passwordConfirm){
+            $this->passwordConfirm = $passwordConfirm;
+        }
+        public function getPasswordConfirm(){
+            return $this->passwordConfirm;
+        }
         public function setCorreo($correo){
             $this->correo = $correo;
         }
         public function getCorreo(){
             return $this->password;
+        }
+        public function validateEmail($con){
+
         }
         public function queryUpdateDataUser($con){
             $query = "UPDATE datos SET nombre='$this->nombre', apellido='$this->apellido' WHERE correo='$this->correo';";
@@ -38,17 +54,23 @@
                 return false;
             }
         }
-        public function queryUpdatePassUser($con){
+        private function queryUpdatePassUser($con){
             //Arreglar el query para poder actualizar el nombre haciendo una conexion a la nueva tabla
-            $query = "UPDATE datos SET nombre='$this->nombre', apellido='$this->apellido' WHERE correo='$this->correo';";
+            $query = "UPDATE datos SET password='$this->password' WHERE correo='$this->correo';";
             $resultado = mysqli_query($con, $query);
             if($resultado){
-                $resultado->close();
                 return true;
             }else{
                 return false;
             }
         }
+        public function validatePassword($con){
+            if(strcmp($this->getPassword(), $this->getPasswordConfirm()) === 0){
+                return $this->queryUpdatePassUser($con);
+            }
+            return false;
+        }
+
     }
     class DataValidate{
         private $arreglo;
@@ -64,34 +86,25 @@
             return true;
         }
     }
-    echo "hola";
-    echo "<br>";
-    //var_dump($_POST);
+    //confirmpasswordactualizar
+    //passwordactualizar
     $redireccion = "index.php";
-    $dataValida = new DataValidate($_POST);
-    var_dump($_POST);
-    if(isset($_POST["correooculto"]) && isset($_POST["apellidoactualizar"])
-        && isset($_POST["nombreactualizar"])){
-        var_dump($_POST);
-        $updateData = new ActualizarDatos();
-        //$updateData->setNombre($_POST["nombreactualizar"]);
-        $updateData->setNombre($_POST["nombreactualizar"]);
-        $updateData->setApellido($_POST["apellidoactualizar"]);
-        $updateData->setCorreo($_POST["correooculto"]);
-        if($updateData->queryUpdateDataUser($conexion)){
-            //mandar mensajes
-            $redireccion = "cuenta/usuario/perfilusuario.php";
+    if(isset($_POST["passwordactualizar"]) &&
+         isset($_POST["confirmpasswordactualizar"]) &&
+         isset($_POST["emailidentificador"])){
+        $updatePassUser = new ActualizarDatos();
+        $updatePassUser->setCorreo($_POST["emailidentificador"]);
+        $updatePassUser->setPassword($_POST["passwordactualizar"]);
+        $updatePassUser->setPasswordConfirm($_POST["confirmpasswordactualizar"]);
+        if($updatePassUser->validatePassword($conexion)){
+            session_unset();
+            session_destroy();
+            $redireccion = "index.php";
         }else{
-            //mandar mensajes
-            $redireccion = "ofertas.php";
+            $redireccion = "proyectoISoft/cuenta/usuario/perfilusuario.php";
         }
-        $updateData = null;
-    }else{
-        //mandar mensajes
-        $redireccion = "index.php";
+        //proyectoISoft/cuenta/usuario/perfilusuario.php
+        //header("Location: /proyectoISoft/".$redireccion);
     }
-    $dataValida = null;
-    mysqli_close($conexion);
-    
     header("Location: /proyectoISoft/".$redireccion);
 ?>

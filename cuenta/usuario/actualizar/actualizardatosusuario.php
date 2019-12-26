@@ -7,7 +7,7 @@
             <form action="/proyectoISoft/cuenta/usuario/peticionesusuario/actualizardatos.php" method="POST">
                 <div class="mb-4">
                     <label for="emailsololeer">Email</label>
-                    <input type="text" readonly class="form-control-plaintext border border-success rounded p-1" value="aquivaelemail@em.com">
+                    <input type="text" readonly class="form-control-plaintext border border-success rounded p-1" id="correoocuelto" name="correooculto" value="<?php echo $_GET["correo"]; ?>">
                 </div><!--input only-read para email-->
                 <div class="mb-4">
                     <label for="nombreusuarioreadonly">Nombre de usuario</label>
@@ -26,6 +26,5 @@
         </div>
     </div>
 </div>
-<?php
-    include('../../../includes/footer.php');
-?>
+<?php include('../../../includes/footer.php'); ?>
+<script src="../../../js/actualizarperfilusuario.js"></script>

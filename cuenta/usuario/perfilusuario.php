@@ -38,13 +38,11 @@
         </div>
         <div>
             <!--"/proyectoISoft/cuenta/usuario/actualizar/actualizardatosusuario.php?"-->
-            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/actualizardatosusuario.php?'.$_SESSION["usuario"]["correo"].'"';?>>Actualizar datos <i class="fa fa-pencil-square-o"></i></a></div>
+            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/actualizardatosusuario.php?correo='.$_SESSION["usuario"]["correo"].'"';?>>Actualizar datos <i class="fa fa-pencil-square-o"></i></a></div>
         </div>
         <div>
-            <div><a href="#">Cambiar contraseñas<i class="fa fa-cog"></i></a></div>
+            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/nuevacontrasena.php?correoc='.$_SESSION["usuario"]["correo"].'"';?>>Cambiar contraseñas<i class="fa fa-cog"></i></a></div>
         </div>
     </div>
 </div>
-<?php
-    include('../../includes/footer.php');
-?>
+<?php include('../../includes/footer.php'); ?>
