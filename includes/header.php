@@ -18,9 +18,9 @@
         </div><!--Imagen de la pagina-->
         <div class="d-flex flex-column w-50">
             <div class="mb-5">
-                <form class="form-inline">
+                <form  method="GET" action="usuarios/busquedaproducto.php" class="form-inline" >
                     <div class="w-75">
-                        <input type="text" id="caja-buscar" class="form-control-plaintext bg-white" placeholder="Busqueda...">
+                        <input type="text" id="caja-buscar" name="caja-buscar" class="form-control-plaintext bg-white" placeholder="Busqueda...">
                     </div>
                     <button type="submit" id="btn-buscador" class="btn btn-primary"><i class="fa fa-search"></i></button>
                 </form>
@@ -35,9 +35,11 @@
             <?php if(!isset($_SESSION["usuario"])): ?>
                 <div><a href="/proyectoISoft/login.php" id="icon-login-click">Login <i class="fa fa-user"></i></a></div><!--icono login pre-form-->
                 <div><a href="/proyectoISoft/registro.php">Crear cuenta <i class="fa fa-user-plus"></i></a></div>
+                <div><a href=""><i class="fa fa-shopping-cart"></i></a></div>
             <?php endif ?>
             <?php if(isset($_SESSION["usuario"])): ?>
                 <div><a href="/proyectoISoft/cuenta/usuario/perfilusuario.php">Cuenta <i class="fa fa-user-circle"></i></a></div>
+                <div><a href="#">Carrito<i class="fa fa-shopping-cart"></i></a></div>
                 <div><a href="/proyectoISoft/controlproductos.php">Subir producto</a></div>
                 <div><a href="/proyectoISoft/sesiones/sessionlogout.php">Cerrar sesion<i class="fa fa-sign-out"></i></a></div>
             <?php endif ?>

@@ -1,5 +1,6 @@
 <?php
     include("../database/database.php");
+    //include("/proyectoISoft/database/database.php");
     $resultado_json = array();
     $query = "SELECT * FROM productos";
     $resultado = mysqli_query($conexion, $query);
