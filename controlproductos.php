@@ -55,7 +55,7 @@
                                             <td>'.$producto["nombre"].'</td>
                                             <td>$'.$producto["precio"].'</td>
                                             <td>'.$producto["descripcion"].'</td>
-                                            <td><a href="" class="btn btn-primary" onclick="actualizar('.$producto["id"].')"><i class="fa fa-pencil"></i></a></td>
+                                            <td><a href="actualizar.php?id='.$producto["id"].'" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
                                             <td><a href="" class="btn btn-danger" onclick="borrar('.$producto["id"].')"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>';
                                 endwhile;
