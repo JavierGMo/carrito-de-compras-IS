@@ -74,26 +74,30 @@
                 </div><!--imagenes de fondo de los productos-->
             </div><!--contenido textos imagenes-->
         </div><!--imagenes de los productos y titulos de las categorias-->
+        <div class="d-flex mb-4"><!--pendiente en el css con background image-->
+            <div class="d-flex flex-column">
+                <div class="pl-3"><p class="display-4">Titulo del bac</p></div><!--titulo de la categoria-->
+                <div class="d-flex flex-row justify-content-center">
+                    <div class="mr-2 ml-2">
+                        <img src="img/gits.jpg" alt="Imagenes productos" class="imagen-producto">
+                        <div><p class="h6">$10000 chifliones de 5 peso xd</p></div>
+                    </div><!--para una forma de columna-->
+                    <div class="mr-2 ml-2">
+                        <img src="img/heroku.png" alt="Imagenes productos" class="imagen-producto">
+                        <div><p class="h6">$10000 chifliones de 5 peso xd</p></div>
+                    </div><!--para una forma de columna-->
+                    <div class="mr-2 ml-2">
+                        <img src="img/uno.png" alt="Imagenes productos" class="imagen-producto">
+                        <div><p class="h6">$10000 chifliones de 5 peso xd</p></div>
+                    </div><!--para una forma de columna-->
+                    <div class="mr-2 ml-2">
+                        <img src="img/uno.png" alt="Imagenes productos" class="imagen-producto">
+                        <div><p class="h6">$10000 chifliones de 5 peso xd</p></div>
+                    </div><!--para una forma de columna-->
+                </div><!--imagenes de fondo de los productos-->
+            </div><!--contenido textos imagenes-->
+        </div><!--imagenes de los productos y titulos de las categorias-->
     </main><!--contenidos principales-->
-    <div class="d-flex">
-        <div class="d-flex flex-column">
-            <div class="pl-3"><p class="display-4">Titulo del bac</p></div><!--titulo de la categoria-->
-            <div class="d-flex flex-row justify-content-center">
-                <div class="d-flex flex-column mr-2 ml-2" id="productos-chidos">
-                    <!--<img src="img/gits.jpg" alt="Imagenes productos" class="imagen-producto">
-                    <div><p class="h6">$10000 chifliones de 5 peso xd</p></div>-->
-                </div><!--para una forma de columna-->
-            </div><!--imagenes de fondo de los productos-->
-        </div><!--contenido textos imagenes-->
-    </div>
-    
-    <?php
-        if(isset($_SESSION["usuario"])){
-            echo "<h1>Hola status</h1>";
-        }else{
-            echo "<h1>Hola status no</h1>";
-        }
-    ?>
     <?php include("./includes/footer.php"); ?>
     <script src="js/barsearch.js"></script>
     <script src="js/acciones-generales.js"></script>

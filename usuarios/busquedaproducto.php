@@ -7,7 +7,7 @@
     if(isset($_GET["caja-buscar"])){
         $resultado;
         $producto = $_GET["caja-buscar"];
-        $query = "SELECT nombre, precio, descripcion FROM productos WHERE nombre like '$producto':";
+        $query = "SELECT nombre, precio, descripcion FROM productos WHERE nombre like '$producto';";
         try {
             $resultado = mysqli_query($conexion, $query);
             if(!$resultado){

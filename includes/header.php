@@ -18,7 +18,7 @@
         </div><!--Imagen de la pagina-->
         <div class="d-flex flex-column w-50">
             <div class="mb-5">
-                <form  method="GET" action="usuarios/busquedaproducto.php" class="form-inline" >
+                <form  method="GET" action="/proyectoISoft/productos.php" class="form-inline" >
                     <div class="w-75">
                         <input type="text" id="caja-buscar" name="caja-buscar" class="form-control-plaintext bg-white" placeholder="Busqueda...">
                     </div>

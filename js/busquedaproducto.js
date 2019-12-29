@@ -5,16 +5,32 @@ let checkData = (valor)=>{
     return false;
 };
 let btn_buscar = document.getElementById("btn-buscar");
-let producto = document.getElementById('caja-buscar');
-let ajax_url = 'usuarios/leerproductos.php';
-
-let ajax_request = new XMLHttpRequest();
 
 
-btn_buscar.addEventListener('click', ()=>{
-    
+
+
+
+
+btn_buscar.addEventListener('click', (e)=>{
+    e.preventDefault();
+    let producto = document.getElementById('caja-buscar');
     if(!checkData(producto.value)){
-        console.log("object");
+        let ajax_request = new XMLHttpRequest();
+        let ajax_url = `usuarios/leerproductos.php?p=${producto.value}`;
+        ajax_request.onreadystatechange = ()=>{
+            if(ajax_request.readyState === 4){
+                try {
+                    let resultado = JSON.parse(ajax_request.responseText);
+                    let div_productos = document.getElementById('cont-productos');
+                    let elemento_creado = document.createElement('div');
+                    (elemento_creado.appendChild(document.createElement('div').appendChild(document.createElement('p')))).innerHTML = resultado[0].nombre;
+                } catch (error) {
+                    throw new Error("No se puede parsear a JSON");
+                }
+
+            }
+        };
+        ajax_request.open("GET", ajax_url, true);
     }
 
 });

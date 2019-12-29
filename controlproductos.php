@@ -1,6 +1,8 @@
 <?php
-    include("includes/header.php"); 
+    include_once("includes/header.php"); 
     include('sesiones/estaregistrado.php');
+    include_once('database/database.php');
+    include_once('classbusquedaproducto/BusquedaProducto.php');
 ?>
     <div class="d-flex flex-row my-3">
         <!--
@@ -44,6 +46,26 @@
                     </thead>
                     <tbody id="tbody-read">
                         <?php
+                            try {
+                                $queyTodosLosProductos = new BusquedaProducto();
+                                $jsonProductos = $queyTodosLosProductos->queryTodosProdutos($conexion);
+                                while($producto = mysqli_fetch_array($jsonProductos)):
+                                    echo '<tr>
+                                            <td>'.$producto["id"].'</td>
+                                            <td>'.$producto["nombre"].'</td>
+                                            <td>$'.$producto["precio"].'</td>
+                                            <td>'.$producto["descripcion"].'</td>
+                                            <td><a href="" class="btn btn-primary" onclick="actualizar('.$producto["id"].')"><i class="fa fa-pencil"></i></a></td>
+                                            <td><a href="" class="btn btn-danger" onclick="borrar('.$producto["id"].')"><i class="fa fa-trash-o"></i></a></td>
+                                        </tr>';
+                                endwhile;
+                                $conexion->close();
+                                $queyTodosLosProductos = null;
+                            } catch (\Throwable $th) {
+                                echo '<div class="mr-2 ml-2">
+                                        <div><p class="h3">Algo salio mal :C</p></div>
+                                    </div>';
+                            }
                             /*
                             $query = "SELECT * FROM productos";
                             $resultado = mysqli_query($conexion, $query);
@@ -69,13 +91,10 @@
             </div>
         </div>
     </div>
-    
-    
-    
-    <?php include("includes/footer.php"); ?>
+    <?php include_once("includes/footer.php"); ?>
     <script src="js/createproduct.js"></script>
     <script src="js/borrar.js" ></script>
-    <script src="js/readproducts.js"></script>
+    <!--<script src="js/readproducts.js"></script>-->
     <!--<script src="js/leerproductos.js"></script>-->
 </body>
 </html>
