@@ -3,7 +3,7 @@
     if($_GET["id"]){
         $id = $_GET["id"];
         $resultado_json = array();
-        $query = "SELECT * FROM productos WHERE id=".$id;
+        $query = "SELECT * FROM producto WHERE ID=".$id;
         $pre_json = array();
         $json_chido = array();
         $resultado = mysqli_query($conexion, $query);
@@ -12,10 +12,12 @@
         }else{
             while($pre_json = mysqli_fetch_assoc($resultado)){
                 $json_chido = array(
-                    "id"=>$pre_json["id"],
-                    "nombre"=>$pre_json["nombre"],
-                    "precio"=>$pre_json["precio"],
-                    "descripcion"=>$pre_json["descripcion"]
+                    "id"=>$pre_json["ID"],
+                    "nombre"=>$pre_json["NOMBREPRODUCTO"],
+                    "descripcion"=>$pre_json["DESCRIPCION"],
+                     "precio"=>$pre_json["PRECIO"]
+                    // "refimagenproducto"=>$pre_json["REFIMAGENPRODCUTO"],
+                    // "proveedor_id"=>$pre_json["PROVEEDOR_ID"]
                 );
             }
             mysqli_close($conexion);
@@ -28,11 +30,12 @@
         $nombre=$_POST["nombre"];
         $precio=$_POST["precio"];
         $descripcion=$_POST["descripcion"];
-        $query = "UPDATE productos SET nombre='$nombre', precio='$precio', descripcion='$descripcion' WHERE id='$id';";
+        $query = "UPDATE producto SET NOMBREPRODUCTO='$nombre', DESCRIPCION='$descripcion', PRECIO='$precio' WHERE ID='$id';";
         $resultado = mysqli_query($conexion, $query);
-        mysqli_close($conexion);
+        //Arreglar la redireccion
         if($resultado){
-            header("Location: http://localhost/proyectoISoft/");
+            mysqli_close($conexion);
+            header("Location: http://localhost/proyectoISoft/controlproductos.php");
         }
         // try {
             
@@ -41,6 +44,6 @@
         //     die("<br><p> Registro no guardado, reintente ". mysqli_error($conexion)."</p>" );
         // }
         
-        mysqli_close($conexion);
+        //mysqli_close($conexion);
     }
 ?>

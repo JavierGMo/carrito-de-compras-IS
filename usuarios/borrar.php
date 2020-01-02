@@ -3,7 +3,7 @@
     
         $id = $_POST["id"];
         echo "Hola";
-        $query = "DELETE FROM productos WHERE id='$id';";
+        $query = "DELETE FROM producto WHERE ID='$id';";
         mysqli_query($conexion, $query);
         
         mysqli_close($conexion);

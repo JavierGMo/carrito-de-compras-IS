@@ -3,7 +3,7 @@
     
     if(isset($_GET["busqueda"])){
         $search = $_GET["busqueda"];
-        $query = "SELECT * FROM productos WHERE nombre LIKE '$search%'";
+        $query = "SELECT * FROM producto WHERE NOMBREPRODUCTO LIKE '$search%'";
         $resultado = mysqli_query($conexion, $query);
         if(!$resultado){
             die("Query error".mysqli_error($conexion));
@@ -12,10 +12,10 @@
 
             while($row = mysqli_fetch_assoc($resultado)){
                 $json[] = array(
-                    'id'=>$row['id'],
-                    'nombre'=> $row['nombre'],
-                    'precio'=>$row['precio'],
-                    'descripcion'=>$row['descripcion'],
+                    'id'=>$row['ID'],
+                    'nombre'=> $row['NOMBREPRODUCTO'],
+                    'precio'=>$row['DESCRIPCION'],
+                    'descripcion'=>$row['PRECIO'],
                 );
             }
             $conexion->close();

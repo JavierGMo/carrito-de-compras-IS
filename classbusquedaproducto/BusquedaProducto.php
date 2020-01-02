@@ -10,16 +10,16 @@
         public function getProducto(){return $this->producto;}
         public function queryDeProducto($conexion){
             $resultadoJson = array();
-            $query = "SELECT nombre, precio, descripcion FROM productos WHERE nombre LIKE '$this->producto%';";
+            $query = "SELECT NOMBREPRODUCTO, DESCRIPCION, PRECIO FROM producto WHERE NOMBREPRODUCTO LIKE '$this->producto%';";
             $resultado = mysqli_query($conexion, $query);
             if(!$resultado){
                 die("".mysqli_error($conexion));
             }else{
                 while($preJson = mysqli_fetch_array($resultado)){
                     $resultadoJson[] = array(
-                        "nombre"=>$preJson["nombre"],
-                        "precio"=>$preJson["precio"],
-                        "descripcion"=>$preJson["descripcion"]
+                        "nombre"=>$preJson["NOMBREPRODUCTO"],
+                        "descripcion"=>$preJson["DESCRIPCION"],
+                        "precio"=>$preJson["PRECIO"]
                     );
                 }
                 mysqli_free_result($resultado);
@@ -30,7 +30,7 @@
         }
         public function queryTodosProdutos($conexion){
             $resultadoJson = array();
-            $query = "SELECT * FROM productos;";
+            $query = "SELECT ID, NOMBREPRODUCTO, DESCRIPCION, PRECIO FROM producto;";
             $resultado = mysqli_query($conexion, $query);
             if(!$resultado){
                 $resultadoJson[] = array(

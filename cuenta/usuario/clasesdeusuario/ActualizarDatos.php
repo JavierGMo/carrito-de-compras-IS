@@ -36,7 +36,7 @@
             return $this->password;
         }
         public function queryUpdateDataUser($con){
-            $query = "UPDATE datos SET nombre='$this->nombre', apellido='$this->apellido' WHERE correo='$this->correo';";
+            $query = "UPDATE usuario SET NOMBRE='$this->nombre', APELLIDO='$this->apellido' WHERE CORREO='$this->correo';";
             $resultado = mysqli_query($con, $query);
             if($resultado){
                 return true;
@@ -46,7 +46,7 @@
         }
         public function queryUpdatePassUser($con){
             //Arreglar el query para poder actualizar el nombre haciendo una conexion a la nueva tabla
-            $query = "UPDATE datos SET password='$this->password' WHERE correo='$this->correo';";
+            $query = "UPDATE usuario SET CONTRASENIA='$this->password' WHERE CORREO='$this->correo';";
             $resultado = mysqli_query($con, $query);
             if($resultado){
                 return true;

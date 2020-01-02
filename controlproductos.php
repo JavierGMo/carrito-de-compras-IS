@@ -38,8 +38,8 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Nombre</th>
-                            <th scope="col">Precio</th>
                             <th scope="col">Descripcion</th>
+                            <th scope="col">Precio</th>
                             <th scope="col">Editar</th>
                             <th scope="col">Borrar</th>
                         </tr>
@@ -47,16 +47,19 @@
                     <tbody id="tbody-read">
                         <?php
                             try {
+                                //AGREGAR EL CODIGO CUANDO SOLO SEA UN PRODUCTO
+                                //EN LA CLASE DE BusquedaProducto
+                                //mover todo lo relacionado con las cosas del usuario
                                 $queyTodosLosProductos = new BusquedaProducto();
                                 $jsonProductos = $queyTodosLosProductos->queryTodosProdutos($conexion);
                                 while($producto = mysqli_fetch_array($jsonProductos)):
                                     echo '<tr>
-                                            <td>'.$producto["id"].'</td>
-                                            <td>'.$producto["nombre"].'</td>
-                                            <td>$'.$producto["precio"].'</td>
-                                            <td>'.$producto["descripcion"].'</td>
-                                            <td><a href="actualizar.php?id='.$producto["id"].'" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
-                                            <td><a href="" class="btn btn-danger" onclick="borrar('.$producto["id"].')"><i class="fa fa-trash-o"></i></a></td>
+                                            <td>'.$producto["ID"].'</td>
+                                            <td>'.$producto["NOMBREPRODUCTO"].'</td>
+                                            <td>'.$producto["DESCRIPCION"].'</td>
+                                            <td>$'.$producto["PRECIO"].'</td>
+                                            <td><a href="actualizar.php?id='.$producto["ID"].'" class="btn btn-primary"><i class="fa fa-pencil"></i></a></td>
+                                            <td><a href="" class="btn btn-danger" onclick="borrar('.$producto["ID"].')"><i class="fa fa-trash-o"></i></a></td>
                                         </tr>';
                                 endwhile;
                                 $conexion->close();

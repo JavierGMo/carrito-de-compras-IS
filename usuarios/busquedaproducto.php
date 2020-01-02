@@ -7,7 +7,7 @@
     if(isset($_GET["caja-buscar"])){
         $resultado;
         $producto = $_GET["caja-buscar"];
-        $query = "SELECT nombre, precio, descripcion FROM productos WHERE nombre like '$producto';";
+        $query = "SELECT NOMBREPRODUCTO, DESCRIPCION, PRECIO FROM producto WHERE NOMBREPRODUCTO like '$producto';";
         try {
             $resultado = mysqli_query($conexion, $query);
             if(!$resultado){
@@ -15,9 +15,9 @@
             }else{
                 while($pre_json = mysqli_fetch_array($resultado)){
                     $resultado_json[] = array(
-                        "nombre"=>$pre_json["nombre"],
-                        "precio"=>$pre_json["precio"],
-                        "descripcion"=>$pre_json["descripcion"]
+                        "nombre"=>$pre_json["NOMBREPRODUCTO"],
+                        "descripcion"=>$pre_json["DESCRIPCION"],
+                        "precio"=>$pre_json["PRECIO"]
                     );
                 }
                 mysqli_free_result($resultado);

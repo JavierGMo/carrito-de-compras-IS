@@ -4,7 +4,7 @@
     if(isset($_POST["usuarionamelogin"]) && isset($_POST["passworsLogin"])){
         $usuariologin = $_POST["usuarionamelogin"];
         $passLog = $_POST["passworsLogin"];
-        $query = "SELECT nombre, apellido, correo, password FROM datos WHERE (correo='".$usuariologin."' OR nombre='".$usuariologin."') AND password='".$passLog."'";
+        $query = "SELECT NOMBRE, APELLIDO, CORREO FROM usuario WHERE (CORREO='".$usuariologin."' OR NOMBRE='".$usuariologin."') AND password='".$passLog."'";
         $res_db = mysqli_query($conexion, $query);
         if($res_db){
             $res_db = mysqli_fetch_assoc($res_db);

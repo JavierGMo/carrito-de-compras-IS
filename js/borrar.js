@@ -1,7 +1,7 @@
 function borrar(id){
     event.preventDefault();
     let ajax_url = './usuarios/borrar.php';
-    let params = `id=${id}`;
+    let params = `ID=${id}`;
     
     
     let ajax_request = new XMLHttpRequest();
