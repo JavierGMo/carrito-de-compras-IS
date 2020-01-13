@@ -33,13 +33,13 @@
             $query = "SELECT ID, NOMBREPRODUCTO, DESCRIPCION, PRECIO FROM producto;";
             $resultado = mysqli_query($conexion, $query);
             if(!$resultado){
-                $resultadoJson[] = array(
+                $resultadoJsonError[] = array(
                     "id"=>"Not found",
                     "nombre"=>"Not found",
                     "precio"=>"Not found",
                     "descripcion"=>"Not found"
                 );
-                return $resultadoJson;
+                return $resultadoJsonError;
             }
             //$resultadoJson = json_encode($resultadoJson);
             return $resultado;

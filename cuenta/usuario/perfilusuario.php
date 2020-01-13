@@ -11,7 +11,7 @@
         <div>
             <div class="d-flex flex-row justify-content-around">
                 <div class="pr-3">img</div>
-                <div class="pr-3"><?php echo $_SESSION["usuario"]["nombre"]; ?></div>
+                <div class="pr-3"><?php echo $_SESSION["usuario"]["NOMBRE"]; ?></div>
             </div>
         </div>
     </div>
@@ -23,7 +23,7 @@
         </div>
         <div>
             <div>
-                <p><?php echo $_SESSION["usuario"]["nombre"]." ".$_SESSION["usuario"]["apellido"]; ?></p>
+                <p><?php echo $_SESSION["usuario"]["NOMBRE"]." ".$_SESSION["usuario"]["APELLIDO"]; ?></p>
                 <p><?php 
                     echo date("F");
                     echo date("d");
@@ -38,10 +38,10 @@
         </div>
         <div>
             <!--"/proyectoISoft/cuenta/usuario/actualizar/actualizardatosusuario.php?"-->
-            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/actualizardatosusuario.php?correo='.$_SESSION["usuario"]["correo"].'"';?>>Actualizar datos <i class="fa fa-pencil-square-o"></i></a></div>
+            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/actualizardatosusuario.php?correo='.$_SESSION["usuario"]["CORREO"].'"';?>>Actualizar datos <i class="fa fa-pencil-square-o"></i></a></div>
         </div>
         <div>
-            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/nuevacontrasena.php?correoc='.$_SESSION["usuario"]["correo"].'"';?>>Cambiar contraseñas<i class="fa fa-cog"></i></a></div>
+            <div><a href=<?php echo '"/proyectoISoft/cuenta/usuario/actualizar/nuevacontrasena.php?correoc='.$_SESSION["usuario"]["CORREO"].'"';?>>Cambiar contraseñas<i class="fa fa-cog"></i></a></div>
         </div>
     </div>
 </div>

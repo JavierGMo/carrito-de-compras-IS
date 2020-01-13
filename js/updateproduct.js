@@ -33,7 +33,10 @@ btn_update_producto.addEventListener('click', function(e){
         e.preventDefault();
         console.log("ya hiciste click");
         let ajax_URL = './usuarios/actualizar.php';
-        let paramet = `id=${id_prod}&nombre=${nombre_producto_up.value}&precio=${precio_producto_up.value}&descripcion=${descripcion_producto_up.value}`;
+        let paramet = `id=${id_prod}
+                        &nombre=${nombre_producto_up.value}
+                        &precio=${precio_producto_up.value}
+                        &descripcion=${descripcion_producto_up.value}`;
         
         
         let ajax_req = new XMLHttpRequest();
