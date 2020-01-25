@@ -22,6 +22,7 @@ ajax_request.onreadystatechange = function() {
         nombre_producto_up.value = respuesta.nombre;
         precio_producto_up.value = respuesta.precio;
         descripcion_producto_up.value = respuesta.descripcion;
+        alertify.alert('Actualizacion de producto', `${respuesta.nombre} es el producto`);
         console.log(respuesta);
     }
 }
@@ -40,7 +41,13 @@ btn_update_producto.addEventListener('click', function(e){
         
         
         let ajax_req = new XMLHttpRequest();
-
+        ajax_req.onreadystatechange = function(){
+            if(ajax_req.readyState === 4){
+                alertify.alert("OK", "producto agregado");
+            }else if(ajax_req.readyState === 5){
+                alertify.alert("No", "producto no agregado, intente de nuevo");
+            }
+        }
         ajax_req.open("POST", ajax_URL, true);
         ajax_req.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
         ajax_req.send(paramet);

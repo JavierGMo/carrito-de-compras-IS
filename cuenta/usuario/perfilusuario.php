@@ -1,5 +1,8 @@
-<?php 
-    include('../../includes/header.php');
+<?php
+    include_once("../usuario/clasesdeusuario/Usuario.php");
+    include_once("../../database/database.php");
+    include_once('../../includes/header.php');
+    $usuario = new Usuario();
 ?>
 <div class="py-3">
     <div class="d-flex flex-row justify-content-around">
@@ -19,7 +22,14 @@
 <div>
     <div class="d-flex flex-column text-center py-4">
         <div class="py-5 cont-imagen-usuario-panel">
-            <img src="/proyectoISoft/img/gits.jpg" class="h-25 w-25 img-thumbnail" alt="foto de perfil">
+            <?php /*'.$usuario->rutaImagen($conexion, $_SESSION["usuario"]["NOMBREUSUARIO"]). 
+                var_dump($usuario->rutaImagen($conexion, $_SESSION["usuario"]["NOMBREUSUARIO"]));
+                echo $usuario->rutaImagen($conexion, $_SESSION["usuario"]["NOMBREUSUARIO"])[0];*/
+                /**
+                 * CAMBIAR LA CONEXION A ORIETANDA A OBJETOS
+                 */
+            ?>
+            <img src=<?php echo '"/proyectoISoft/assets/imgprofileusers/'.$usuario->rutaImagen($conexion, $_SESSION["usuario"]["NOMBREUSUARIO"])[0].'"'; ?>class="h-25 w-25 img-thumbnail" alt="foto de perfil">
         </div>
         <div>
             <div>
@@ -45,4 +55,7 @@
         </div>
     </div>
 </div>
-<?php include('../../includes/footer.php'); ?>
+<?php
+    $usuario = null;
+    include('../../includes/footer.php');
+?>

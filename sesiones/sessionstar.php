@@ -7,7 +7,7 @@
         $usuariologin = trim($_POST["usuarionamelogin"]);
         //quitamos espacios en blanco
         $passLog = trim($_POST["passworsLogin"]);
-        $query = "SELECT NOMBRE, APELLIDO, CORREO FROM usuario WHERE (CORREO='$usuariologin' OR NOMBREUSUARIO='$usuariologin') AND CONTRASENIA='$passLog';";
+        $query = "SELECT NOMBRE, APELLIDO, NOMBREUSUARIO, CORREO FROM usuario WHERE (CORREO='$usuariologin' OR NOMBREUSUARIO='$usuariologin') AND CONTRASENIA='$passLog';";
         $res_db = mysqli_query($conexion, $query);
         //var_dump($res_db);
         if($res_db){

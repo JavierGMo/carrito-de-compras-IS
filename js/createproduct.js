@@ -17,6 +17,11 @@ btn_subir_producto.addEventListener('click', function(e){
     let ajax_request = new XMLHttpRequest();
 
     ajax_request.open("POST", ajax_url, true);
+    ajax_request.onreadystatechange = function(){
+        if(ajax_request.readyState === 4){
+            alertify.alert('Agregado', `Producto agregado c:`);
+        }
+    }
     ajax_request.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     
     console.log("object");

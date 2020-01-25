@@ -16,7 +16,7 @@
             <div class="w-75">
                 <form enctype="multipart/formdata">
                     <div class="form-group mx-1 mb-1">
-                        <label for="DescripcionProd">Imagen del productp</label>
+                        <label for="DescripcionProd">Imagen del producto</label>
                         <input type="text" name="ref-img-producto" class="form-control" id="ref-img-producto" autocomplete="off">
                     </div><!--Imagen del producto-->
                     <div class="form-group mx-1 mb-1 ">
